@@ -82,6 +82,10 @@ public class Vendor : MonoBehaviour
             return;
         }
 
+        if (p.balance < active_prices[idx])
+        {
+            return;
+        }
         p.balance -= active_prices[idx];
         idx++;
         if (type == 0)

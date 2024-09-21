@@ -41,7 +41,7 @@ public class Cover : MonoBehaviour
 
         for (int i = 1; i < prob_ranges.Length; i++)
         {
-            if (roll >= prob_ranges[i - 1] && roll <= prob_ranges[i])
+            if (roll >= prob_ranges[i - 1] && roll < prob_ranges[i])
             {
                 return birdsContained[i - 1].GetComponent<Bird>();
             }

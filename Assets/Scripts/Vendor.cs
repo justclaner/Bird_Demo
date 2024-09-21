@@ -12,7 +12,7 @@ public class Vendor : MonoBehaviour
     public int[] stealth_prices;
 
     private int[] active_prices;
-    private int idx;
+    private int idx = 0;
 
     public Text balance_text;
 
@@ -44,17 +44,6 @@ public class Vendor : MonoBehaviour
 
     void updateMessage()
     {
-        if (type == 0)
-        {
-            //If cam lvl = 1, want price of cam_lvl 2
-            //cam_lvl 2 is stored in active_prices[0]
-            idx = 0;
-        }
-        else
-        {
-            idx = -2;
-        }
-
         if (idx < 2)
         {
             GameObject.FindGameObjectWithTag("Vending").GetComponent<NoticeScreen>().open("Upgrade " + this.type_str + "? \n Next upgrade costs: " + active_prices[idx]);
